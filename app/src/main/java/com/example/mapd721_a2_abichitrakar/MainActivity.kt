@@ -93,6 +93,7 @@ fun ContactsList(context: ComponentActivity) {
                         addContact(context, newContact)
                         contactName = ""
                         contactNumber = ""
+                        contacts = loadContacts(context)
                     } else {
                         // Show validation message
                         showDialog = true
@@ -117,6 +118,8 @@ fun ContactsList(context: ComponentActivity) {
                             // Set contact to delete and show confirmation dialog
                             contactToDelete = contact
                             showDialog = true
+                            contacts = loadContacts(context)
+
                         }
                     }
                 }
@@ -209,7 +212,7 @@ fun AboutSection() {
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
 
     ) {
-        Text("About section:" )
+        Text("About Section:" )
         Text("Student Name: Abi Chitrakar", fontSize = 16.sp)
         Text("Student ID: 301369773", fontSize = 16.sp)
     }
@@ -303,3 +306,6 @@ fun ContactManagerAppPreview() {
         ContactsList(ComponentActivity())
     }
 }
+
+
+
