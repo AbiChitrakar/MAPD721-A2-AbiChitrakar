@@ -44,6 +44,7 @@ fun ContactsList(context: ComponentActivity) {
     var contactName by remember { mutableStateOf("") }
     var contactNumber by remember { mutableStateOf("") }
     var contacts by remember { mutableStateOf(emptyList<Contact>()) }
+
     var showDialog by remember { mutableStateOf(false) }
     var contactToDelete by remember { mutableStateOf<Contact?>(null) }
 
@@ -284,7 +285,7 @@ fun addContact(context: ComponentActivity, contact: Contact) {
         }
         context.contentResolver.insert(ContactsContract.Data.CONTENT_URI, phoneNumberValues)
     } catch (e: Exception) {
-        // Handle the exception appropriately (e.g., log the error, display a message to the user)
+        //  ( log the error, display a message to the user)
         e.printStackTrace()
     }
 }
